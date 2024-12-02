@@ -1,0 +1,161 @@
+/* 기본 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* 헤더 스타일 */
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+  }
+  
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+  }
+  
+  .search-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-container input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+  }
+  
+  .search-container button {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #4CAF50;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+  }
+  
+  .search-container button:hover {
+    background-color: #45a049;
+  }
+  
+  .login button {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    background-color: #333;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .login button:hover {
+    background-color: #555;
+  }
+  
+  /* 내비게이션 스타일 */
+  .nav {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+  }
+  
+  .nav a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+  }
+  
+  .nav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  /* Body 스타일 */
+  .content {
+    padding: 20px;
+  }
+  
+  .restaurant-list {
+    display: flex;
+    overflow-x: auto;
+    padding: 20px;
+    gap: 10px;
+  }
+  
+  .restaurant {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 250px;
+    flex-shrink: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .restaurant img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .restaurant h3 {
+    margin: 10px 0;
+    text-align: center;
+  }
+  
+  .restaurant p {
+    margin: 5px 0;
+    color: #555;
+  }
+  
+  /* 푸터 스타일 */
+  .footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+  }
+
+  .recommand {
+    text-align: center;
+    margin: 15px;
+    padding: 15px;
+    background-color: #acd6ae;
+  }
+  
+  .seoul-recommand {
+    margin: 5px;
+    font-weight: bold;
+    font-size: 25px;
+  }
+  
+  .region-recommand {
+    margin: 5px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #1b5a6a;
+    cursor: pointer;
+  }
+  
+  .theme-recommand {
+    margin: 5px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #1b5a6a;
+    cursor: pointer;
+  }
