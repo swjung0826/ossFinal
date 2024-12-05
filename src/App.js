@@ -1,16 +1,20 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './Components/Common/Header';
-import Body from './Components/Common/Body';
 import Footer from './Components/Common/Footer';
-import './Components/Common/Common.css';
+import Body from './Components/Common/Body';
+import Detail from './Page/Detail';
 
 function App() {
   return (
-    <div>
+    <Router>
       <Header />
-      <Body />
+      <Routes>
+        <Route path="/" element={<Body />} />
+        <Route path="/detail/:id" element={<Detail />} />
+      </Routes>
       <Footer />
-    </div>
+    </Router>
   );
 }
 
