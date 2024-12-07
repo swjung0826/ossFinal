@@ -1,0 +1,205 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* App 전체를 Flexbox로 설정 */
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.main-content {
+  flex: 1;
+}
+
+/* 헤더 스타일 */
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #2F4F4F;
+  color: white;
+  padding: 10px 20px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+.search-container input[type="text"] {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+  width: 400px; /* 검색창 크기 증가 */
+}
+
+.search-container button {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #2F4F4F;
+  background-color: #2F4F4F;
+  color: white;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+.search-container button:hover {
+  background-color: #539292;
+}
+
+.login button {
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  background-color: #2a4c4c;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login button:hover {
+  background-color: #559191;
+}
+
+/* 내비게이션 스타일 */
+.nav {
+  display: flex;
+  justify-content: center;
+  background-color: #FFA500;
+}
+
+.nav a {
+  color: white;
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.nav a:hover {
+  background-color: #FFD700;
+  color: black;
+}
+
+/* Body 스타일 */
+.content {
+  padding: 20px;
+  padding-bottom: 60px; /* Footer 높이만큼 여백 추가 */
+}
+
+.restaurant-list {
+  display: flex;
+  overflow-x: auto;
+  padding: 20px;
+  gap: 10px;
+}
+
+.restaurant {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 250px;
+  flex-shrink: 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.restaurant img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.restaurant h3 {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.restaurant p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.recommand {
+  position: relative;
+  background-image: url(https://cdn.pixabay.com/photo/2022/04/04/13/54/city-7111380_1280.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+  margin: 15px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  font-family: 'Arial', sans-serif; /* 글씨체 고정 */
+}
+
+.recommand::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.399);
+  z-index: 0;
+}
+
+.recommand > * {
+  position: relative;
+  z-index: 1;
+  font-family: 'Arial', sans-serif;
+}
+
+.busan-recommand {
+  color: rgb(255, 255, 255);
+  -webkit-text-stroke: 0.8px #000000;
+  margin: 5px;
+  padding-bottom: 20px;
+  font-weight: bold;
+  font-size: 25px;
+  font-family: 'Arial', sans-serif;
+}
+
+.region-recommand, .theme-recommand {
+  margin: 5px;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #41494a;
+  cursor: pointer;
+  text-decoration-line: none;
+  color: #ddd;
+}
+
+.region-recommand:hover, .theme-recommand:hover {
+  background-color: #89b7c3;
+  color: #000000;
+}
+
+/* 푸터 스타일 */
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: relative;
+  width: 100%;
+  bottom: 0;
+}

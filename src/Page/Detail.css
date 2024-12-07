@@ -1,0 +1,20 @@
+.detail-content {
+    padding: 20px;
+  }
+  
+  .detail-content h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .detail-content img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  .detail-content p {
+    font-size: 16px;
+    margin: 5px 0;
+  }
+  
