@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./Page.css";
+import "./User.css";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -9,14 +9,40 @@ export default function Login() {
   const [name, setName] = useState("");
   const [error, setError] = useState("");
 
-  const handleLogin = (e) => {
+  const API_URL = "https://67281923270bd0b9755456e8.mockapi.io/api/v1/user";
+
+  const handleLogin = async (e) => {
     e.preventDefault();
 
-    // 간단한 로그인 로직
-    if (email === "test@example.com" && password === "1234" && name === "test") {
-      navigate("/"); // 로그인 성공 시 메인 페이지로 이동
-    } else {
-      setError("이메일, 비밀번호 또는 닉네임이 올바르지 않습니다.");
+    // 입력값 유효성 검사
+    if (!email || !password || !name) {
+      setError("모든 필드를 입력해주세요.");
+      return;
+    }
+
+    try {
+      // MockAPI에 사용자 정보 추가
+      const response = await fetch(API_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          password,
+          name,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("사용자 정보를 추가하는 중 오류가 발생했습니다.");
+      }
+
+      // 성공적으로 추가된 경우 메인 페이지로 이동
+      navigate("/");
+    } catch (err) {
+      setError("사용자 정보를 추가하지 못했습니다. 다시 시도해주세요.");
+      console.error(err);
     }
   };
 
@@ -40,7 +66,7 @@ export default function Login() {
                       type="email"
                       className="form-control"
                       id="email"
-                      placeholder="test@example.com을 입력하세요(임시 이메일)"
+                      placeholder="이메일을 입력하세요"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                     />
@@ -53,7 +79,7 @@ export default function Login() {
                       type="password"
                       className="form-control"
                       id="password"
-                      placeholder="1234를 입력하세요(임시 비밀번호)"
+                      placeholder="비밀번호를 입력하세요"
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                     />
@@ -66,7 +92,7 @@ export default function Login() {
                       type="text"
                       className="form-control"
                       id="name"
-                      placeholder="test 입력하세요(임시 닉네임)"
+                      placeholder="닉네임을 입력하세요"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                     />
@@ -80,7 +106,6 @@ export default function Login() {
           </div>
         </div>
       </div>
-      
     </div>
   );
 }

@@ -5,10 +5,11 @@ import Footer from "./Components/Common/Footer";
 import Body from "./Components/Common/Body";
 import Detail from "./Page/Detail";
 import Home from "./Components/Layout/Home";
-import Login from "./Page/Login";
+import Login from "./Components/User/Login";
 import Notice from "./Page/Notice";
 import ByTheme from "./Page/ByTheme";
-import ByRegion from "./Page/ByRegion"; // ByRegion 컴포넌트 추가
+import ByRegion from "./Page/ByRegion";
+import UserGet from "./Components/User/UserGet"; // 사용자 확인 컴포넌트 추가
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
         <Route path="/body" element={<Body />} />
         <Route path="/detail/:id" element={<Detail />} />
         <Route path="/bytheme" element={<ByTheme />} />
-        <Route path="/Page/ByRegion" element={<ByRegion />} /> {/* 새 경로 추가 */}
+        <Route path="/Page/ByRegion" element={<ByRegion />} />
+        <Route path="/user" element={<UserGet />} /> {/* 사용자 확인 경로 추가 */}
       </Routes>
       <Footer />
     </Router>

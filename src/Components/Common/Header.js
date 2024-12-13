@@ -13,10 +13,17 @@ export default function Header() {
           <input type="text" placeholder="지역명 또는 음식명을 입력하세요..." />
           <button type="submit">검색</button>
         </div>
-        <div className="login">
-          <Link to="/login">
-            <button type="button" className="btn btn-primary">로그인</button>
-          </Link>
+        <div className="user-login-container">
+          <div className="user">
+            <Link to="/user">
+              <button type="button" className="btn btn-primary">사용자 확인</button>
+            </Link>
+          </div>
+          <div className="login">
+            <Link to="/login">
+              <button type="button" className="btn btn-primary">로그인</button>
+            </Link>
+          </div>
         </div>
       </header>
       <nav className="nav">

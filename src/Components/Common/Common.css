@@ -66,18 +66,27 @@ html, body {
   background-color: #45a049;
 }
 
+.user-login-container {
+  display: flex; /* Flexbox 적용 */
+  align-items: center; /* 수직 가운데 정렬 */
+  gap: 10px; /* 버튼 간 간격 추가 */
+}
+
+.user button,
 .login button {
   padding: 10px;
   font-size: 16px;
+  font-weight: bold;
   border: none;
-  background-color: #333;
+  background-color: #FFA500;
   color: white;
   border-radius: 5px;
   cursor: pointer;
 }
 
+.user button:hover,
 .login button:hover {
-  background-color: #555;
+  background-color: #ffd380;
 }
 
 /* 내비게이션 스타일 */
