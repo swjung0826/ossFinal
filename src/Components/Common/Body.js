@@ -94,7 +94,7 @@ const Body = () => {
     <>
       <div className="recommand">
         <p className="busan-recommand">부산 추천 맛집</p>
-        <a className="region-recommand">지역별</a>
+        <a className="region-recommand" onClick={() => navigate("./page/byregion")}>지역별</a>
         <a
           className="theme-recommand"
           onClick={() => navigate("/bytheme")}

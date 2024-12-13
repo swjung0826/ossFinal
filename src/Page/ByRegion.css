@@ -6,6 +6,13 @@
   background-color: #f9f9f9;
 }
 
+.layout {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  width: 100%;
+}
+
 .map-container {
   flex: 1;
   text-align: center;
@@ -29,6 +36,18 @@
   border-radius: 8px;
 }
 
+.region-select-container {
+  margin-top: 20px;
+}
+
+.region-select {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 .restaurant-list-container {
   flex: 3;
   padding: 20px;
@@ -36,6 +55,7 @@
   border-radius: 12px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
   overflow-y: auto;
+  height: 80vh; /* Adjust height to fit content */
 }
 
 .restaurant-list {
@@ -48,7 +68,7 @@
 }
 
 .restaurant-item {
-  flex: 0 0 calc(33.333% - 20px);
+  flex: 0 0 calc(33.333% - 20px); /* Adjust box width */
   max-width: calc(33.333% - 20px);
   padding: 20px;
   border: 1px solid #ddd;
