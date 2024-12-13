@@ -7,6 +7,7 @@ import Detail from "./Page/Detail";
 import Home from "./Components/Layout/Home";
 import Login from "./Page/Login";
 import Notice from "./Page/Notice";
+import ByRegion from "./Page/ByRegion"; // ByRegion 컴포넌트 추가
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/Notice" element={<Notice />} />
         <Route path="/body" element={<Body />} />
         <Route path="/detail/:id" element={<Detail />} />
+        <Route path="/Page/ByRegion" element={<ByRegion />} /> {/* 새 경로 추가 */}
       </Routes>
       <Footer />
     </Router>
