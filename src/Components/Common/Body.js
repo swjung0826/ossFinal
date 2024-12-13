@@ -95,7 +95,12 @@ const Body = () => {
       <div className="recommand">
         <p className="busan-recommand">부산 추천 맛집</p>
         <a className="region-recommand">지역별</a>
-        <a className="theme-recommand">테마별</a>
+        <a
+          className="theme-recommand"
+          onClick={() => navigate("/bytheme")}
+        >
+          테마별
+        </a>
       </div>
 
       {loading && <p>데이터를 불러오는 중입니다...</p>}
@@ -123,7 +128,10 @@ const Body = () => {
                     src={restaurant.MAIN_IMG_NORMAL || ""}
                     alt={restaurant.MAIN_TITLE || "이미지 없음"}
                   />
-                  <p>{restaurant.ITEMCNTNTS || "설명 정보 없음"}</p>
+                  <p><strong>주소:</strong> {restaurant.ADDR1 || "정보 없음"}</p>
+                  <p><strong>전화번호:</strong> {restaurant.CNTCT_TEL || "정보 없음"}</p>
+                  <p><strong>운영 시간:</strong> {restaurant.USAGE_DAY_WEEK_AND_TIME || "정보 없음"}</p>
+                  <p><strong>메뉴:</strong> {restaurant.RPRSNTV_MENU || "정보 없음"}</p>
                   <div className="actions">
                     <button
                       onClick={(e) => {
@@ -160,7 +168,10 @@ const Body = () => {
                       src={restaurant.MAIN_IMG_NORMAL || ""}
                       alt={restaurant.MAIN_TITLE || "이미지 없음"}
                     />
-                    <p>{restaurant.ITEMCNTNTS || "설명 정보 없음"}</p>
+                    <p><strong>주소:</strong> {restaurant.ADDR1 || "정보 없음"}</p>
+                    <p><strong>전화번호:</strong> {restaurant.CNTCT_TEL || "정보 없음"}</p>
+                    <p><strong>운영 시간:</strong> {restaurant.USAGE_DAY_WEEK_AND_TIME || "정보 없음"}</p>
+                    <p><strong>메뉴:</strong> {restaurant.RPRSNTV_MENU || "정보 없음"}</p>
                     <div className="actions">
                       <p>👍 좋아요: {restaurant.likes}</p>
                       <p>📌 스크랩: {restaurant.scraps}</p>
