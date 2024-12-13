@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import "./User.css";
 
 export default function UserGet() {
@@ -8,30 +7,44 @@ export default function UserGet() {
   const [loading, setLoading] = useState(true);
 
   const API_URL = "https://67281923270bd0b9755456e8.mockapi.io/api/v1/user";
-  const navigate = useNavigate();
 
   useEffect(() => {
-    const fetchUsers = async () => {
-      setLoading(true);
-      try {
-        const response = await fetch(API_URL);
-        if (!response.ok) {
-          throw new Error("사용자 데이터를 가져오는 데 실패했습니다.");
-        }
-        const data = await response.json();
-        setUsers(data);
-      } catch (err) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
     fetchUsers();
   }, []);
 
-  const handleEdit = (id) => {
-    navigate(`/user/update/${id}`);
+  const fetchUsers = async () => {
+    setLoading(true);
+    try {
+      const response = await fetch(API_URL);
+      if (!response.ok) {
+        throw new Error("사용자 데이터를 가져오는 데 실패했습니다.");
+      }
+      const data = await response.json();
+      setUsers(data);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleDelete = async (id) => {
+    if (window.confirm("정말로 삭제하시겠습니까?")) {
+      try {
+        const response = await fetch(`${API_URL}/${id}`, {
+          method: "DELETE",
+        });
+
+        if (!response.ok) {
+          throw new Error("사용자 데이터를 삭제하는 데 실패했습니다.");
+        }
+
+        alert("사용자 데이터가 삭제되었습니다.");
+        fetchUsers(); // 삭제 후 사용자 목록 다시 불러오기
+      } catch (err) {
+        setError(err.message);
+      }
+    }
   };
 
   return (
@@ -56,8 +69,17 @@ export default function UserGet() {
                 <td>{user.name}</td>
                 <td>{user.email}</td>
                 <td>
-                  <button className="edit-btn" onClick={() => handleEdit(user.id)}>
+                  <button
+                    className="edit-btn"
+                    onClick={() => alert(`수정 페이지로 이동: ${user.id}`)}
+                  >
                     ✏️
+                  </button>
+                  <button
+                    className="delete-btn ms-2"
+                    onClick={() => handleDelete(user.id)}
+                  >
+                    🗑️
                   </button>
                 </td>
               </tr>

@@ -102,3 +102,17 @@ button.btn-cancel {
 button.btn-cancel:hover {
     background-color: #5a6268;
 }
+
+.delete-btn {
+    background: none;
+    border: none;
+    color: red;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  .delete-btn:hover {
+    text-decoration: underline;
+  }
+  
