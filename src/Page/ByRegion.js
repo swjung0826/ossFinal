@@ -8,7 +8,7 @@ export default function ByRegion() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const API_URL = "http://apis.data.go.kr/6260000/FoodService/getFoodKr";
+  const API_URL = "https://apis.data.go.kr/6260000/FoodService/getFoodKr";
   const API_KEY = "tZ8%2BBiaaU1zFRCLRmv119pWkvT%2FsGdT2PBKdKaz3XVAQaEXlW9OYyvrOjlAojAcPC2N30Z83cW1%2FGg7Y0ox68g%3D%3D";
 
   // API에서 데이터 가져오기
