@@ -5,7 +5,8 @@ body {
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -67,9 +68,12 @@ html, body {
 }
 
 .user-login-container {
-  display: flex; /* Flexbox 적용 */
-  align-items: center; /* 수직 가운데 정렬 */
-  gap: 10px; /* 버튼 간 간격 추가 */
+  display: flex;
+  /* Flexbox 적용 */
+  align-items: center;
+  /* 수직 가운데 정렬 */
+  gap: 10px;
+  /* 버튼 간 간격 추가 */
 }
 
 .user button,
@@ -114,6 +118,11 @@ html, body {
   padding: 20px;
   padding-bottom: 60px;
   font-size: 13px;
+}
+
+.content h2 {
+  font-weight: bold;
+  color: rgb(18, 38, 23);
 }
 
 .restaurant-list {
@@ -190,7 +199,7 @@ html, body {
   z-index: 0;
 }
 
-.recommand > * {
+.recommand>* {
   position: relative;
   z-index: 1;
   font-family: 'Arial', sans-serif;
@@ -206,7 +215,8 @@ html, body {
   font-size: 25px;
 }
 
-.region-recommand, .theme-recommand {
+.region-recommand,
+.theme-recommand {
   margin: 5px;
   padding: 10px;
   border-radius: 8px;
@@ -217,7 +227,8 @@ html, body {
   font-size: 16px;
 }
 
-.region-recommand:hover, .theme-recommand:hover {
+.region-recommand:hover,
+.theme-recommand:hover {
   background-color: #89b7c3;
   color: #000000;
 }

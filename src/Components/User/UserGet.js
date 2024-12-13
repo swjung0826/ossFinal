@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./User.css";
 
-export default function UserCreate() {
+export default function UserGet() {
   const [users, setUsers] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
   const API_URL = "https://67281923270bd0b9755456e8.mockapi.io/api/v1/user";
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -28,8 +30,12 @@ export default function UserCreate() {
     fetchUsers();
   }, []);
 
+  const handleEdit = (id) => {
+    navigate(`/user/update/${id}`);
+  };
+
   return (
-    <div className="user-create-page">
+    <div className="user-get-page">
       <h1>사용자 정보</h1>
       {loading && <p>데이터를 불러오는 중입니다...</p>}
       {error && <p>{error}</p>}
@@ -38,8 +44,9 @@ export default function UserCreate() {
           <thead>
             <tr>
               <th>ID</th>
-              <th>이름</th>
+              <th>닉네임</th>
               <th>이메일</th>
+              <th>수정 및 삭제</th>
             </tr>
           </thead>
           <tbody>
@@ -48,6 +55,11 @@ export default function UserCreate() {
                 <td>{user.id}</td>
                 <td>{user.name}</td>
                 <td>{user.email}</td>
+                <td>
+                  <button className="edit-btn" onClick={() => handleEdit(user.id)}>
+                    ✏️
+                  </button>
+                </td>
               </tr>
             ))}
           </tbody>
