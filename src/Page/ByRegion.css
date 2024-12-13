@@ -108,3 +108,18 @@
   text-align: left;
   overflow-wrap: break-word;
 }
+
+.theme-button {
+  font-weight: bold;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #ff9b0e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.theme-button:hover {
+  background-color: #ebc77a;
+}

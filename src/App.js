@@ -24,6 +24,7 @@ function App() {
         <Route path="/detail/:id" element={<Detail />} />
         <Route path="/bytheme" element={<ByTheme />} />
         <Route path="/page/byregion" element={<ByRegion />} />
+        <Route path="/by-theme" element={<ByTheme />} />
         <Route path="/user" element={<UserGet />} /> 
         <Route path="/user/update/:id" element={<UserUpdate />} />
       </Routes>

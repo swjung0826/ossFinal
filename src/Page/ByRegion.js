@@ -1,17 +1,20 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./ByRegion.css";
 
 export default function ByRegion() {
-  const [restaurants, setRestaurants] = useState([]); // 전체 맛집 데이터
-  const [filteredRestaurants, setFilteredRestaurants] = useState([]); // 필터링된 맛집 데이터
-  const [selectedRegion, setSelectedRegion] = useState("전체"); // 선택된 지역
+  const [restaurants, setRestaurants] = useState([]);
+  const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+  const [selectedRegion, setSelectedRegion] = useState("전체");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   const API_URL = "https://apis.data.go.kr/6260000/FoodService/getFoodKr";
-  const API_KEY = "tZ8%2BBiaaU1zFRCLRmv119pWkvT%2FsGdT2PBKdKaz3XVAQaEXlW9OYyvrOjlAojAcPC2N30Z83cW1%2FGg7Y0ox68g%3D%3D";
+  const API_KEY =
+    "tZ8%2BBiaaU1zFRCLRmv119pWkvT%2FsGdT2PBKdKaz3XVAQaEXlW9OYyvrOjlAojAcPC2N30Z83cW1%2FGg7Y0ox68g%3D%3D";
 
-  // API에서 데이터 가져오기
+  const navigate = useNavigate(); // 페이지 이동을 위한 useNavigate 훅
+
   useEffect(() => {
     const fetchRestaurants = async () => {
       setLoading(true);
@@ -33,10 +36,10 @@ export default function ByRegion() {
           address: item.ADDR1 || "주소 정보 없음",
           region: item.GUGUN_NM || "지역 정보 없음",
           image: item.MAIN_IMG_NORMAL || "https://via.placeholder.com/150",
-          likes: Math.floor(Math.random() * 100), // 랜덤 좋아요 수 추가
+          likes: Math.floor(Math.random() * 100),
         }));
         setRestaurants(enrichedItems);
-        setFilteredRestaurants(enrichedItems); // 기본값: 전체 데이터
+        setFilteredRestaurants(enrichedItems);
       } catch (err) {
         setError("데이터를 불러오는 중 오류가 발생했습니다.");
       } finally {
@@ -47,7 +50,6 @@ export default function ByRegion() {
     fetchRestaurants();
   }, []);
 
-  // 지역 선택 이벤트 핸들러
   const handleRegionChange = (e) => {
     const region = e.target.value;
     setSelectedRegion(region);
@@ -68,7 +70,6 @@ export default function ByRegion() {
 
       {!loading && !error && (
         <div className="layout">
-          {/* 왼쪽: 지도와 지역 선택 */}
           <div className="map-container">
             <h1 className="info-title">지역별 부산 맛집 찾기!</h1>
             <img
@@ -76,7 +77,6 @@ export default function ByRegion() {
               alt="부산 지도"
               className="map-image"
             />
-            {/* 지역 선택 드롭다운 */}
             <div className="region-select-container">
               <select
                 className="region-select"
@@ -100,9 +100,15 @@ export default function ByRegion() {
                 <option value="해운대구">해운대구</option>
               </select>
             </div>
+            {/* 테마별 맛집 찾기 버튼 */}
+            <button
+              className="theme-button"
+              onClick={() => navigate("/by-theme")}
+            >
+              "테마별 맛집 찾기"로 이동하기
+            </button>
           </div>
 
-          {/* 오른쪽: 맛집 리스트 */}
           <div className="restaurant-list-container">
             <ul className="restaurant-list">
               {filteredRestaurants.map((restaurant) => (
