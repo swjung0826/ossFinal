@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./User.css";
 
 export default function UserGet() {
@@ -7,6 +8,7 @@ export default function UserGet() {
   const [loading, setLoading] = useState(true);
 
   const API_URL = "https://67281923270bd0b9755456e8.mockapi.io/api/v1/user";
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchUsers();
@@ -26,6 +28,10 @@ export default function UserGet() {
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleEdit = (id) => {
+    navigate(`/user/update/${id}`);
   };
 
   const handleDelete = async (id) => {
@@ -69,10 +75,7 @@ export default function UserGet() {
                 <td>{user.name}</td>
                 <td>{user.email}</td>
                 <td>
-                  <button
-                    className="edit-btn"
-                    onClick={() => alert(`수정 페이지로 이동: ${user.id}`)}
-                  >
+                  <button className="edit-btn" onClick={() => handleEdit(user.id)}>
                     ✏️
                   </button>
                   <button
