@@ -1,133 +1,90 @@
-/* ByRegion.css */
-
 .byregion-container {
   display: flex;
-  justify-content: center; /* Horizontally center content */
-  align-items: center; /* Vertically center content */
   font-family: Arial, sans-serif;
   gap: 20px;
   padding: 20px;
   background-color: #f9f9f9;
-  height: 100vh; /* Make container take full viewport height */
 }
 
-.theme-buttons {
+.map-container {
   flex: 1;
+  text-align: center;
   background-color: #f9f9f9;
   padding: 20px;
-  border-right: 1px solid #ddd;
-  box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.theme-buttons h3 {
-  font-size: 1.5rem; /* Increased font size */
-  margin-bottom: 20px;
-  font-weight: bold;
-  color: #444;
-}
-
-.theme-buttons button {
-  width: 100%;
-  padding: 15px; /* Increased padding */
-  margin-bottom: 10px;
-  border: none;
-  border-radius: 8px;
-  background-color: #e0e0e0;
-  font-size: 1.2rem; /* Increased font size */
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
-}
-
-.theme-buttons button:hover {
-  background-color: #c0c0c0;
-  transform: translateY(-2px);
-}
-
-.restaurant-list-container {
-  flex: 5; /* Increased flex value for a larger container */
-  padding: 30px; /* Increased padding */
-  background-color: #fff;
-  border-radius: 12px; /* Increased border radius */
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* Increased shadow size */
-  overflow-x: auto;
-  white-space: nowrap;
-  display: flex;
-  flex-direction: column;
-  height: 90%; /* Adjust height for a larger container */
-}
-
-.restaurant-list-title {
-  font-size: 2rem; /* Increased font size */
-  margin-bottom: 30px;
-  font-weight: bold;
-  text-align: left;
-  color: #333;
-}
-
-.restaurant-list {
-  display: flex;
-  gap: 30px; /* Increased gap */
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  align-items: flex-start;
-}
-
-.restaurant-item {
-  flex: 0 0 calc(33% - 30px); /* Increased size */
-  max-width: calc(33% - 30px);
-  padding: 30px; /* Increased padding */
-  border: 1px solid #ddd;
-  border-radius: 12px; /* Increased border radius */
-  background-color: #fff;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Increased shadow size */
-  transition: transform 0.2s, box-shadow 0.2s;
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Center content vertically */
-  height: auto; /* Adjusted height */
-}
-
-.restaurant-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3); /* Increased shadow intensity */
-}
-
-.restaurant-item img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px; /* Increased border radius */
-  margin-bottom: 20px; /* Increased margin */
-}
-
-.restaurant-item h3 {
-  font-size: 1.5rem; /* Increased font size */
-  margin-bottom: 15px;
-  font-weight: bold;
-  color: #222;
-}
-
-.restaurant-item p {
-  font-size: 1rem; /* Increased font size */
-  color: #555;
-  margin-bottom: 10px;
-  word-break: break-word;
-  line-height: 1.6; /* Increased line height */
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .map-container h1 {
-  text-align: center;
+  font-size: 1.8rem;
   font-weight: bold;
   color: rgb(16, 39, 11);
+  margin-bottom: 20px;
 }
 
 .map-container img {
   width: 100%;
-  max-width: 600px; /* Increased max width */
-  display: block;
-  margin: 0 auto;
+  max-width: 300px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.restaurant-list-container {
+  flex: 3;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+}
+
+.restaurant-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.restaurant-item {
+  flex: 0 0 calc(33.333% - 20px);
+  max-width: calc(33.333% - 20px);
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.restaurant-item img {
+  width: 100%;
+  height: 150px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
+
+.restaurant-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #222;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.restaurant-item p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 8px;
+  line-height: 1.5;
+  text-align: left;
+  overflow-wrap: break-word;
 }
