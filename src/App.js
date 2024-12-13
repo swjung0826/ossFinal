@@ -11,7 +11,6 @@ import ByTheme from "./Page/ByTheme";
 import ByRegion from "./Page/ByRegion";
 import UserGet from "./Components/User/UserGet"; 
 import UserUpdate from "./Components/User/UserUpdate"; 
-import UserDelete from "./Components/User/UserDelete";
 
 function App() {
   return (
@@ -27,7 +26,6 @@ function App() {
         <Route path="/page/byregion" element={<ByRegion />} />
         <Route path="/user" element={<UserGet />} /> 
         <Route path="/user/update/:id" element={<UserUpdate />} />
-        <Route path="/user/delete/:id" element={<UserDelete />} />
       </Routes>
       <Footer />
     </Router>
