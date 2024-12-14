@@ -123,7 +123,7 @@ const Body = () => {
                         increaseLikes(index);
                       }}
                     >
-                      👍 좋아요 ({Math.floor(restaurant.likes / 2)})
+                      👍 좋아요 ({restaurant.likes})
                     </button>
                     <button
                       onClick={(e) => {
