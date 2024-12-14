@@ -1,0 +1,72 @@
+.search-results-container {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+  
+  .search-results-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #0d1f0c;
+    font-weight: bold;
+  }
+  
+  .search-results-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .search-result-item {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: calc(33.333% - 20px);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .result-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .result-details {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .result-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #222;
+  }
+  
+  .result-description {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .result-menu,
+  .result-address,
+  .result-phone {
+    font-size: 0.9rem;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  .result-menu strong,
+  .result-address strong,
+  .result-phone strong {
+    color: #007bff;
+  }
+  

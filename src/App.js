@@ -13,7 +13,7 @@ import ByRegion from "./Page/ByRegion";
 import UserGet from "./Components/User/UserGet"; 
 import UserUpdate from "./Components/User/UserUpdate"; 
 import PageIntro from "./Page/PageIntro";
-
+import Search from "./Page/Search";
 
 function App() {
   return (
@@ -33,6 +33,7 @@ function App() {
         <Route path="/user" element={<UserGet />} /> 
         <Route path="/user/update/:id" element={<UserUpdate />} />
         <Route path="/pageIntro" element={<PageIntro/>} />
+        <Route path="/search" element={<Search/>} />
       </Routes>
       <Footer />
     </Router>

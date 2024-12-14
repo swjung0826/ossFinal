@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./Common.css";
 
 const Body = () => {
@@ -14,7 +14,6 @@ const Body = () => {
 
   useEffect(() => {
     const fetchRestaurants = async () => {
-      console.log("fetchRestaurants 호출됨");
       setLoading(true);
       try {
         const pages = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -23,7 +22,6 @@ const Body = () => {
             `${API_URL}?serviceKey=${API_KEY}&numOfRows=10&pageNo=${pageNo}&resultType=json`
           )
             .then((response) => {
-              console.log(`페이지 ${pageNo} 상태 코드:`, response.status);
               if (!response.ok) {
                 throw new Error(`페이지 ${pageNo} 요청 실패: ${response.status}`);
               }
@@ -36,21 +34,18 @@ const Body = () => {
         );
 
         const results = await Promise.all(pagePromises);
-        console.log("모든 페이지 결과:", results);
-
         const allItems = results.flatMap((result) =>
           result ? result.getFoodKr?.item || [] : []
         );
-        console.log("병합된 데이터:", allItems);
 
         if (allItems.length > 0) {
-          const enrichedRestaurants = allItems.map((restaurant) => ({
+          const initialRestaurants = allItems.map((restaurant) => ({
             ...restaurant,
             likes: 0,
             scraps: 0,
-            views: 0,
+            views: Number(localStorage.getItem(`views-${restaurant.UC_SEQ}`)) || 0,
           }));
-          setRestaurants(enrichedRestaurants);
+          setRestaurants(initialRestaurants);
         } else {
           setError("조건에 맞는 데이터를 찾을 수 없습니다.");
         }
@@ -85,6 +80,7 @@ const Body = () => {
     setRestaurants((prevRestaurants) => {
       const updatedRestaurants = [...prevRestaurants];
       updatedRestaurants[index].views += 1;
+      localStorage.setItem(`views-${restaurant.UC_SEQ}`, updatedRestaurants[index].views);
       return updatedRestaurants;
     });
     navigate(`/detail/${restaurant.UC_SEQ}`, { state: restaurant });
@@ -110,13 +106,6 @@ const Body = () => {
                   key={restaurant.UC_SEQ}
                   className="restaurant"
                   onClick={() => handleDetailPage(index, restaurant)}
-                  onMouseEnter={() => {
-                    setRestaurants((prev) => {
-                      const updated = [...prev];
-                      updated[index].views += 1;
-                      return updated;
-                    });
-                  }}
                 >
                   <h3>{restaurant.MAIN_TITLE || "이름 정보 없음"}</h3>
                   <img
@@ -134,7 +123,7 @@ const Body = () => {
                         increaseLikes(index);
                       }}
                     >
-                      👍 좋아요 ({restaurant.likes})
+                      👍 좋아요 ({Math.floor(restaurant.likes / 2)})
                     </button>
                     <button
                       onClick={(e) => {
@@ -142,9 +131,9 @@ const Body = () => {
                         increaseScraps(index);
                       }}
                     >
-                      📌 스크랩 ({restaurant.scraps})
+                      📌 스크랩 ({Math.floor(restaurant.scraps / 2)})
                     </button>
-                    <p>👀 조회수: {restaurant.views}</p>
+                    <p>👀 조회수: {Math.floor(restaurant.views / 2)}</p>
                   </div>
                 </div>
               ))}
@@ -168,9 +157,9 @@ const Body = () => {
                     <p><strong>운영 시간:</strong> {restaurant.USAGE_DAY_WEEK_AND_TIME || "정보 없음"}</p>
                     <p><strong>메뉴:</strong> {restaurant.RPRSNTV_MENU || "정보 없음"}</p>
                     <div className="actions">
-                      <p>👍 좋아요: {restaurant.likes}</p>
-                      <p>📌 스크랩: {restaurant.scraps}</p>
-                      <p>👀 조회수: {restaurant.views}</p>
+                      <p>👍 좋아요: {Math.floor(restaurant.likes / 2)}</p>
+                      <p>📌 스크랩: {Math.floor(restaurant.scraps / 2)}</p>
+                      <p>👀 조회수: {Math.floor(restaurant.views / 2)}</p>
                     </div>
                   </div>
                 ))}
