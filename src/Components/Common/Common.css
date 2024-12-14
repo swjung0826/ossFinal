@@ -64,7 +64,7 @@ body {
 }
 
 .search-container button:hover {
-  background-color: #45a049;
+  background-color: #c07e04;
 }
 
 .user-login-container {
@@ -131,6 +131,7 @@ body {
   padding: 20px;
   gap: 15px;
 }
+
 
 .restaurant-list::-webkit-scrollbar {
   height: 8px;

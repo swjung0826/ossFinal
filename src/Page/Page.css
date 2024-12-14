@@ -7,7 +7,6 @@
 body, html {
   height: 100%;
   margin: 0;
-  display: flex;
   flex-direction: column;
 }
 
@@ -33,13 +32,14 @@ body, html {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  min-height: 100vh; /* 뷰포트 높이를 채움 */
 }
 
 .notice-item {
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
-  padding: 20px;
+  padding: 20px 20px 6px 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -54,7 +54,7 @@ body, html {
   font-size: 14px;
   color: #555;
   margin-bottom: 10px;
-  line-height: 1.6;
+  line-height: 1.2;
 }
 
 .notice-date {

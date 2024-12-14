@@ -110,7 +110,7 @@ export default function ByRegion() {
           </div>
 
           <div className="restaurant-list-container">
-            <ul className="restaurant-list">
+            <ul className="restaurant-list-byregion ">
               {filteredRestaurants.map((restaurant) => (
                 <li key={restaurant.id} className="restaurant-item">
                   <h3>{restaurant.title}</h3>

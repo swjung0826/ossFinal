@@ -17,7 +17,7 @@ const Body = () => {
       console.log("fetchRestaurants 호출됨");
       setLoading(true);
       try {
-        const pages = [1, 2];
+        const pages = [1, 2, 3, 4, 5, 6, 7, 8, 9];
         const pagePromises = pages.map((pageNo) =>
           fetch(
             `${API_URL}?serviceKey=${API_KEY}&numOfRows=10&pageNo=${pageNo}&resultType=json`
@@ -95,12 +95,7 @@ const Body = () => {
       <div className="recommand">
         <p className="busan-recommand">부산 추천 맛집</p>
         <a className="region-recommand" onClick={() => navigate("./page/byregion")}>지역별</a>
-        <a
-          className="theme-recommand"
-          onClick={() => navigate("/bytheme")}
-        >
-          테마별
-        </a>
+        <a className="theme-recommand" onClick={() => navigate("/bytheme")}>테마별</a>
       </div>
 
       {loading && <p>데이터를 불러오는 중입니다...</p>}

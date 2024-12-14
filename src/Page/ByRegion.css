@@ -58,7 +58,7 @@
   height: 80vh; /* Adjust height to fit content */
 }
 
-.restaurant-list {
+.restaurant-list-byregion {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;

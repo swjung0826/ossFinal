@@ -27,7 +27,7 @@ export default function Header() {
         </div>
       </header>
       <nav className="nav">
-        <Link to="/Page/PageIntro" className="nav-link">
+        <Link to="/PageIntro" className="nav-link">
           페이지 소개
         </Link>
         <Link to="/Notice" className="nav-link">
@@ -36,7 +36,7 @@ export default function Header() {
         <Link to="/Page/ByRegion" className="nav-link">
           부산 맛집 찾기
         </Link>
-        <Link to="/Page/Faq" className="nav-link">
+        <Link to="/Faq" className="nav-link">
           FAQ
         </Link>
       </nav>

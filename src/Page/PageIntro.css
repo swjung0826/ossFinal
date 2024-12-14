@@ -1,0 +1,67 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f6f6f6;
+    height: 100%; /* 기본 높이 설정 */
+}
+
+.container_pageIntro {
+    position: relative;
+    width: 100vw; /* 뷰포트 너비에 맞춤 */
+    height: 100vh; /* 뷰포트 높이에 맞춤 */
+    margin: 0;
+    overflow-x: scroll; /* 가로 스크롤 허용 */
+    display: flex;
+    scroll-snap-type: x mandatory; /* 가로 스크롤 스냅 */
+    background-color: #ffffff; /* 컨테이너 배경 흰색 */
+}
+
+.content_pageIntro{
+    scroll-snap-align: start;
+    flex: none;
+    width: 100vw; /* 컨텐츠 너비를 뷰포트의 90%로 설정해 흰색 공간 추가 */
+    height: 70vh; /* 컨텐츠 높이를 뷰포트의 90%로 설정 */
+    margin: auto; /* 컨텐츠를 중앙으로 정렬 */
+    background-size: contain; /* 이미지 비율 유지 */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #f6f6f6; /* 콘텐츠 배경 흰색 */
+    border: 1px solid #ffffff; /* 경계선 추가로 이미지 구분 */
+    box-sizing: border-box;
+}
+
+.pagination{
+    position: absolute;
+    bottom: 18%; /* 버튼 위치를 조정 */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1em;
+    z-index: 10;
+}
+
+.dot-btn {
+    width: 16px;
+    height: 16px;
+    background-color: #ddd;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot-btn:hover,
+.dot-btn.active {
+    background-color: #f8b020;
+}
+
+/* 가로 스크롤바 숨기기 */
+.container_pageIntro::-webkit-scrollbar {
+    display: none;
+}
+
+.container_pageIntro {
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+}
