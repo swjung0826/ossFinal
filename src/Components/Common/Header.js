@@ -50,7 +50,7 @@ export default function Header() {
       <Link to="/pageIntro" className="nav-link">
           홈페이지 소개
         </Link>
-        <Link to="/Page/ByRegion" className="nav-link">
+        <Link to="/ByRegion" className="nav-link">
           부산 지역별 맛집
         </Link>
         <Link to="/ByTheme" className="nav-link">
