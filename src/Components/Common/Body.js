@@ -131,9 +131,9 @@ const Body = () => {
                         increaseScraps(index);
                       }}
                     >
-                      📌 스크랩 ({Math.floor(restaurant.scraps / 2)})
+                      📌 스크랩 ({restaurant.scraps})
                     </button>
-                    <p>👀 조회수: {Math.floor(restaurant.views / 2)}</p>
+                    <p>👀 조회수: {restaurant.views}</p>
                   </div>
                 </div>
               ))}
