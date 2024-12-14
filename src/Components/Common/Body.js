@@ -157,9 +157,9 @@ const Body = () => {
                     <p><strong>운영 시간:</strong> {restaurant.USAGE_DAY_WEEK_AND_TIME || "정보 없음"}</p>
                     <p><strong>메뉴:</strong> {restaurant.RPRSNTV_MENU || "정보 없음"}</p>
                     <div className="actions">
-                      <p>👍 좋아요: {Math.floor(restaurant.likes / 2)}</p>
-                      <p>📌 스크랩: {Math.floor(restaurant.scraps / 2)}</p>
-                      <p>👀 조회수: {Math.floor(restaurant.views / 2)}</p>
+                      <p>👍 좋아요: {restaurant.likes}</p>
+                      <p>📌 스크랩: {restaurant.scraps}</p>
+                      <p>👀 조회수: {restaurant.views}</p>
                     </div>
                   </div>
                 ))}

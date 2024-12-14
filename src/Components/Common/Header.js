@@ -26,7 +26,7 @@ export default function Header() {
           <form onSubmit={handleSearch}>
             <input
               type="text"
-              placeholder="지역명 또는 음식명을 입력하세요..."
+              placeholder="지역명 및 음식명을 입력하세요..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)} // 검색어 상태 업데이트
             />
