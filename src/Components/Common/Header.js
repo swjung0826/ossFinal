@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <>
       <header className="header-container">
-        <Link to="/" className="title">
+        <Link to="/home" className="title">
           다먹자
         </Link>
         <div className="search-container">

@@ -3,10 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import './PageIntro.css';
 
 const pages = [
-    { image: "/images/1.jpg" },
-    { image: "/images/2.jpg" },
-    { image: "/images/3.jpg" },
-    { image: "/images/4.jpg" }
+    { image: "/Images/1.jpg" },
+    { image: "/Images/2.jpg" },
+    { image: "/Images/3.jpg" },
+    { image: "/Images/4.jpg" }
 ];
 
 const PageIntro = () => {
@@ -35,7 +35,7 @@ const PageIntro = () => {
 
     const handleImageClick = (index) => {
         // 페이지에 따라 다른 동작 가능 (현재는 모두 메인 페이지로 이동)
-        if (index === 3) navigate('/'); // 예: 첫 번째 사진 클릭 시 메인 페이지 이동
+        if (index === 3) navigate('/home'); // 예: 첫 번째 사진 클릭 시 메인 페이지 이동
         // 필요 시 다른 index에 따른 동작 추가 가능
     };
 
